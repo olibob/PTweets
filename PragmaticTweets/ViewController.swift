@@ -22,6 +22,7 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        reloadTweets()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,6 +48,12 @@ class ViewController: UITableViewController {
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "")
         cell.textLabel?.text = parsedTweets[indexPath.row].tweetText
         return cell
+    }
+    
+    // MARK: Functions
+    
+    func reloadTweets() {
+        self.tableView.reloadData()
     }
     
 }
