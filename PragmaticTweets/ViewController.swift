@@ -14,7 +14,7 @@ let defaultAvatarURL = NSURL(string: "https://abs.twimg.com/sticky/default_profi
 class ViewController: UITableViewController {
 
     var parsedTweets: [ParsedTweet] = [
-    ParsedTweet(tweetText: "IOS SDK Development", userName:"bob", createdAt: "2014-08-20 16:44:32 EDT", userAvatarURL: defaultAvatarURL),
+    ParsedTweet(tweetText: "IOS SDK Development. Learning to do stuff with Xcode and the new SDK :-)", userName:"bob", createdAt: "2014-08-20 16:44:32 EDT", userAvatarURL: defaultAvatarURL),
     ParsedTweet(tweetText: "Math is so not cool", userName:"bob", createdAt: "2014-08-20 17:44:32 EDT", userAvatarURL: defaultAvatarURL),
     ParsedTweet(tweetText: "Swift is tricky", userName:"bob", createdAt: "2014-08-20 18:44:32 EDT", userAvatarURL: defaultAvatarURL)
     ]
@@ -45,8 +45,14 @@ class ViewController: UITableViewController {
 //    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "")
-        cell.textLabel?.text = parsedTweets[indexPath.row].tweetText
+        let cell = tableView.dequeueReusableCellWithIdentifier("CustomTweetCell") as ParsedTweetCell
+        let parsedTweet = parsedTweets[indexPath.row]
+        cell.userNameLabel.text = parsedTweet.userName
+        cell.tweetTextLabel.text = parsedTweet.tweetText
+        cell.createdAtLabel.text = parsedTweet.createdAt
+        if parsedTweet.userAvatarURL != nil {
+            cell.avatarImageView.image = UIImage(data: NSData(contentsOfURL: parsedTweet.userAvatarURL!))
+        }
         return cell
     }
     

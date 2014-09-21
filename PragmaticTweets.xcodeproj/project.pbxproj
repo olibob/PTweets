@@ -14,6 +14,7 @@
 		E6515E4019CABCC900591C96 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6515E3E19CABCC900591C96 /* LaunchScreen.xib */; };
 		E6515E4C19CABCC900591C96 /* PragmaticTweetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6515E4B19CABCC900591C96 /* PragmaticTweetsTests.swift */; };
 		E689DC6319CEECCC007ADA1C /* ParsedTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E689DC6219CEECCC007ADA1C /* ParsedTweet.swift */; };
+		E689DC6519CF2A82007ADA1C /* ParsedTweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E689DC6419CF2A82007ADA1C /* ParsedTweetCell.swift */; };
 		E692AA2219CB71B300029F3B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E692AA2019CB71B300029F3B /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		E6515E4A19CABCC900591C96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6515E4B19CABCC900591C96 /* PragmaticTweetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PragmaticTweetsTests.swift; sourceTree = "<group>"; };
 		E689DC6219CEECCC007ADA1C /* ParsedTweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParsedTweet.swift; path = PragmaticTweetsTests/ParsedTweet.swift; sourceTree = SOURCE_ROOT; };
+		E689DC6419CF2A82007ADA1C /* ParsedTweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParsedTweetCell.swift; path = PragmaticTweetsTests/ParsedTweetCell.swift; sourceTree = SOURCE_ROOT; };
 		E692AA1E19CB6BBE00029F3B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		E692AA1F19CB6BBF00029F3B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E692AA2119CB71B300029F3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				E6515E3E19CABCC900591C96 /* LaunchScreen.xib */,
 				E6515E3319CABCC900591C96 /* Supporting Files */,
 				E689DC6219CEECCC007ADA1C /* ParsedTweet.swift */,
+				E689DC6419CF2A82007ADA1C /* ParsedTweetCell.swift */,
 			);
 			path = PragmaticTweets;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E689DC6519CF2A82007ADA1C /* ParsedTweetCell.swift in Sources */,
 				E689DC6319CEECCC007ADA1C /* ParsedTweet.swift in Sources */,
 				E6515E3819CABCC900591C96 /* ViewController.swift in Sources */,
 				E6515E3619CABCC900591C96 /* AppDelegate.swift in Sources */,
