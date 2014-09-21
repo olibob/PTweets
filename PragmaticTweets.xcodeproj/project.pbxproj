@@ -13,6 +13,7 @@
 		E6515E3D19CABCC900591C96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6515E3C19CABCC900591C96 /* Images.xcassets */; };
 		E6515E4019CABCC900591C96 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6515E3E19CABCC900591C96 /* LaunchScreen.xib */; };
 		E6515E4C19CABCC900591C96 /* PragmaticTweetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6515E4B19CABCC900591C96 /* PragmaticTweetsTests.swift */; };
+		E667AAEA19CC237700AC40D8 /* WebViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E667AAE919CC237700AC40D8 /* WebViewTests.swift */; };
 		E692AA2219CB71B300029F3B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E692AA2019CB71B300029F3B /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		E6515E4519CABCC900591C96 /* PragmaticTweetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PragmaticTweetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6515E4A19CABCC900591C96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6515E4B19CABCC900591C96 /* PragmaticTweetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PragmaticTweetsTests.swift; sourceTree = "<group>"; };
+		E667AAE919CC237700AC40D8 /* WebViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewTests.swift; sourceTree = "<group>"; };
 		E692AA1E19CB6BBE00029F3B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		E692AA1F19CB6BBF00029F3B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		E692AA2119CB71B300029F3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			children = (
 				E6515E4B19CABCC900591C96 /* PragmaticTweetsTests.swift */,
 				E6515E4919CABCC900591C96 /* Supporting Files */,
+				E667AAE919CC237700AC40D8 /* WebViewTests.swift */,
 			);
 			path = PragmaticTweetsTests;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6515E4C19CABCC900591C96 /* PragmaticTweetsTests.swift in Sources */,
+				E667AAEA19CC237700AC40D8 /* WebViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
