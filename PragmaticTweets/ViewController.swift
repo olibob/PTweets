@@ -23,6 +23,9 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         reloadTweets()
+        var refresher = UIRefreshControl()
+        refresher.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl = refresher
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,6 +63,12 @@ class ViewController: UITableViewController {
     
     func reloadTweets() {
         self.tableView.reloadData()
+    }
+    
+    @IBAction func handleRefresh(sender: AnyObject?) {
+        self.parsedTweets.append(ParsedTweet(tweetText: "New row", userName: "user", createdAt: "createdAt", userAvatarURL: defaultAvatarURL))
+        reloadTweets()
+        self.refreshControl?.endRefreshing()
     }
     
 }
