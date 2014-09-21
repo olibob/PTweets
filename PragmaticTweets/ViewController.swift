@@ -9,38 +9,45 @@
 import UIKit
 import Social
 
-public class ViewController: UIViewController {
+let defaultAvatarURL = NSURL(string: "https://abs.twimg.com/sticky/default_profile_images/default_profile_1_200x200.png")
 
-    @IBOutlet public var twitterWebView: UIWebView!
+class ViewController: UITableViewController {
+
+    var parsedTweets: [ParsedTweet] = [
+    ParsedTweet(tweetText: "IOS SDK Development", userName:"bob", createdAt: "2014-08-20 16:44:32 EDT", userAvatarURL: defaultAvatarURL),
+    ParsedTweet(tweetText: "Math is so not cool", userName:"bob", createdAt: "2014-08-20 17:44:32 EDT", userAvatarURL: defaultAvatarURL),
+    ParsedTweet(tweetText: "Swift is tricky", userName:"bob", createdAt: "2014-08-20 18:44:32 EDT", userAvatarURL: defaultAvatarURL)
+    ]
     
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.reloadTweets()
     }
 
-    public override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func handleTweetButtonTapped(sender: UIButton) {
-        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter) {
-            let tweetVC = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-            let message = NSBundle.mainBundle().localizedStringForKey("Test IOS8 twitter API", value: "", table: nil)
-            tweetVC.setInitialText(message)
-            self.presentViewController(tweetVC, animated: true, completion: nil)
-        } else {
-            println("Can't send tweet")
-        }
-    }
-
-    @IBAction func handleShowMyTweetsTapped(sender: UIButton) {
-        self.reloadTweets()
+    // MARK: UITableViewDataSource
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
     
-    func reloadTweets() {
-        self.twitterWebView.loadRequest(NSURLRequest(URL: NSURL(string: "https://www.twitter.com/olibob57")))
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return parsedTweets.count
     }
+    
+//    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "Tweets"
+//    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "")
+        cell.textLabel?.text = parsedTweets[indexPath.row].tweetText
+        return cell
+    }
+    
 }
 
