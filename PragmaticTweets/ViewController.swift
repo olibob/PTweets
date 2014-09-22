@@ -8,6 +8,7 @@
 
 import UIKit
 import Social
+import Accounts
 
 let defaultAvatarURL = NSURL(string: "https://abs.twimg.com/sticky/default_profile_images/default_profile_1_200x200.png")
 
@@ -53,7 +54,7 @@ class ViewController: UITableViewController {
         cell.userNameLabel.text = parsedTweet.userName
         cell.tweetTextLabel.text = parsedTweet.tweetText
         cell.createdAtLabel.text = parsedTweet.createdAt
-        if parsedTweet.userAvatarURL != nil {
+        if (parsedTweet.userAvatarURL != nil) {
             cell.avatarImageView.image = UIImage(data: NSData(contentsOfURL: parsedTweet.userAvatarURL!))
         }
         return cell
@@ -62,7 +63,16 @@ class ViewController: UITableViewController {
     // MARK: Functions
     
     func reloadTweets() {
-        self.tableView.reloadData()
+        let accountStore = ACAccountStore()
+        let twitterAccountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
+        accountStore.requestAccessToAccountsWithType(twitterAccountType, options: nil, completion: {(granted: Bool, error: NSError!) -> () in
+            if granted {
+                println("OK")
+            } else {
+                println("NOK")
+            }
+        })
+    
     }
     
     @IBAction func handleRefresh(sender: AnyObject?) {
